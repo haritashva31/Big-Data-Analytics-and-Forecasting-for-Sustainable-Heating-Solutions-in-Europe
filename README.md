@@ -13,17 +13,17 @@ In this context, the present research aims to explore the feasibility and implic
 # Methodology
 To investigate the dynamics of heat demand and the efficiency of heat pumps across 28 European countries, we implemented a comprehensive methodology encompassing data collection, preprocessing, modeling, pipeline development, and insights extraction. This multi-step approach enabled us to analyze hourly time series data and derive valuable insights to inform energy system modeling and planning. Let's delve into each stage of our methodology in detail.
 
-# Data Collection
+## Data Collection
 The first step in our research involved collecting comprehensive data on heat demand and coefficient of performance (COP) for heat pumps across 28 European countries. This data was sourced from the "When2Heat" dataset, which provides hourly time series data covering a significant temporal span.
 
-# Data Preprocessing
+## Data Preprocessing
 Data preprocessing is a pivotal step in ensuring the quality and integrity of the dataset for subsequent analysis. This process encompassed several crucial steps:
 
 Missing Value Imputation: The dataset was examined for missing values, particularly in the context of heat demand and COP data. When missing values were encountered, a specific approach was adopted to maintain temporal consistency. We replaced missing values for a particular day with the daily mean of that specific day across multiple years. This method ensured that missing values were filled with representative values based on historical trends, preserving the integrity of the dataset.
 
 Outlier Detection and Treatment: Outliers, anomalies, or erroneous data points were identified through statistical analysis and domain knowledge. These outliers were treated by either removing them from the dataset or correcting them using appropriate techniques. By addressing outliers, we mitigated their potential impact on the analysis and modeling process.
 
-# Feature Engineering
+## Feature Engineering
 Due to the complexity and size of the dataset, we employed Apache Spark for data preprocessing. The dataset, consisting of over 750 columns, was initially divided by country codes to facilitate processing. One of the challenges encountered during preprocessing was the presence of empty heat demand columns from 2016 to 2023. To address this, we divided the dataset into two parts: one containing data up to 2016, and the other for predicting values from 2016 to 2031. Predicted values were generated using linear regression techniques based on the preprocessed data.
 
 Through meticulous data preprocessing, we ensured that the dataset was well-prepared for subsequent modeling and analysis, laying the foundation for robust and reliable insights into heat demand and COP for heat pumps across the target countries.
